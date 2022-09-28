@@ -137,7 +137,7 @@ export default class Calendar {
 
     // console.log(yearsList.length)
 
-    const k = yearsList.length  % 16 ? Math.floor(yearsList.length / 16 ) + 1 : Math.floor(yearsList.length / 16 );
+    const k = yearsList.length % 16 ? Math.floor(yearsList.length / 16 ) + 1 : Math.floor(yearsList.length / 16 );
 
     // console.log(yearsList)
 

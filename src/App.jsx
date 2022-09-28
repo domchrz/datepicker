@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import Datepicker from './components/Datepicker';
 import Scrollbar from './components/Scrollbar';
 import YearsDropdown from './components/YearsDropdown/YearsDropdown';
-import ContextUser from './CotnextConsumer';
 import Calendar from './models/Calendar';
 import { day } from './models/Day';
 import { month } from './models/Month';
@@ -61,7 +60,6 @@ function App() {
   calendar.getYearsList()
   return (
     <div>
-      <ContextUser />
       <div style={{ display: 'flex', gap: '1rem' }}>
         <button
           onClick={() =>
