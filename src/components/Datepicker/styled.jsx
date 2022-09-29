@@ -41,7 +41,7 @@ export const ChevronButton = styled.button`
   justify-content: center;
   align-items: center;
   padding-block: 0.5rem;
-  padding-inline: .25rem;
+  padding-inline: 0.25rem;
   height: 100%;
   background-color: none;
   border: none;
@@ -109,7 +109,7 @@ export const DaysGrid = styled.div`
 export const WeekDay = styled.p`
   line-height: 1.25rem;
   padding: 0.5rem;
-  font-size: 0.75rem;;
+  font-size: 0.75rem; ;
 `;
 
 export const MonthDay = styled.p`
@@ -121,10 +121,15 @@ export const MonthDay = styled.p`
   height: 2.125rem;
   font-size: 0.875rem;
   ${({ isCurrentMonth }) => !isCurrentMonth && `color: #C0C0C0;`}
-  background-color: ${({isSelected}) => isSelected && '#185bb4'};
-  color: ${({isSelected}) => isSelected && 'white'};
-  border-radius: .5rem;
+  background-color: ${({ isSelected }) => isSelected && '#185bb4'};
+  color: ${({ isSelected }) => isSelected && 'white'};
+  border-radius: 0.5rem;
+  transition: background-color 0.3s;
   cursor: pointer;
+
+  &:hover {
+    background-color: ${({ isCurrentMonth, isSelected }) => isCurrentMonth && !isSelected && `#F1F1F1`};
+  }
 `;
 
 export const Line = styled.div`

@@ -24,20 +24,14 @@ export default function Datepicker() {
   const [calendar, setCalendar] = useState(new Calendar());
   const [showYears, setShowYears] = useState(false);
   const [isSelected, setIsSelected] = useState(calendar.today);
-
-  // const changeYear = (year) => {
-  //   setCalendar(new Calendar(year, calendar.month.number));
-  //   setShowYears(false);
-  // };
-
+  
   const changeYear = useCallback(
-    (year) => {
+    year => {
       setCalendar(new Calendar(year, calendar.month.number));
       setShowYears(false);
     },
-    [calendar],
-  )
-  
+    [calendar]
+  );
 
   return (
     <Card>
@@ -66,8 +60,13 @@ export default function Datepicker() {
           <DropdownButton onClick={() => setShowYears(prevState => !prevState)}>
             {showYears ? <DropdownHide /> : <DropdownShow />}
           </DropdownButton>
-          {showYears && <YearsDropdown years={calendar.getYearsList()}         currentYear={calendar.year}
-        changeYear={changeYear}/>}
+          {showYears && (
+            <YearsDropdown
+              years={calendar.getYearsList()}
+              currentYear={calendar.year}
+              changeYear={changeYear}
+            />
+          )}
         </YearContainer>
       </NavContainer>
       <DaysGrid>
@@ -77,16 +76,23 @@ export default function Datepicker() {
       </DaysGrid>
       <Line />
       <DaysGrid>
-        {calendar.getMonthDaysGrid().map(item => (
-          <MonthDay
-          onClick={() => setIsSelected(item.day)}
-            isSelected={
-              isSelected.format('DD/MM/YYY') === item.day.format('DD/MM/YYY') || isSelected === item.day
-            }
-            isCurrentMonth={item.isCurrentMonth}>
-            {item.day.date}
-          </MonthDay>
-        ))}
+        {calendar.getMonthDaysGrid().map(item => {
+          if (item.isCurrentMonth) {
+            return (
+              <MonthDay
+                onClick={() => setIsSelected(item.day)}
+                isSelected={
+                  isSelected.format('DD/MM/YYY') === item.day.format('DD/MM/YYY') ||
+                  isSelected === item.day
+                }
+                isCurrentMonth={true}>
+                {item.day.date}
+              </MonthDay>
+            );
+          } else {
+            return <MonthDay isCurrentMonth={false}>{item.day.date}</MonthDay>;
+          }
+        })}
       </DaysGrid>
     </Card>
   );
