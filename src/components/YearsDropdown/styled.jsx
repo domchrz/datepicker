@@ -5,7 +5,7 @@ export const DropdownContainer = styled.div`
   top: calc(100% + 0.6875rem);
   right: 0;
   position: absolute;
-  width: 14.4375rem;
+  width: 15.625rem;
   height: 13.5rem;
   position: absolute;
   background-color: #ffffff;

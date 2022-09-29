@@ -7,6 +7,7 @@ import { ReactComponent as ChevronRight } from '../../assets/chevron-right.svg';
 const Grid = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  column-gap: 0.3125rem;
 `;
 
 export default function YearsDropdown({ years, changeYear, currentYear }) {
