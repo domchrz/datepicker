@@ -64,7 +64,7 @@ export default function Datepicker() {
         <YearContainer>
           {calendar.year}
           <DropdownButton onClick={() => setShowYears(prevState => !prevState)}>
-            {showYears ? <DropdownShow /> : <DropdownHide />}
+            {showYears ? <DropdownHide /> : <DropdownShow />}
           </DropdownButton>
           {showYears && <YearsDropdown years={calendar.getYearsList()}         currentYear={calendar.year}
         changeYear={changeYear}/>}
