@@ -1,11 +1,8 @@
 import { useState } from 'react';
 import styled from 'styled-components';
 import Datepicker from './components/Datepicker';
-import Scrollbar from './components/Scrollbar';
 import YearsDropdown from './components/YearsDropdown/YearsDropdown';
 import Calendar from './models/Calendar';
-import { day } from './models/Day';
-import { month } from './models/Month';
 
 const Grid = styled.div`
   display: grid;
@@ -54,13 +51,17 @@ const YearList = styled.div`
 `;
 
 function App() {
-  const [calendar, setCalendar] = useState(new Calendar(null, null));
-  const [showYears, setShowYears] = useState(false);
+  // const [calendar, setCalendar] = useState(new Calendar(null, null));
+  // const [showYears, setShowYears] = useState(false);
 
-  calendar.getYearsList()
+  // const changeYear = (year) => {
+  //   setCalendar(new Calendar(year, calendar.month.number));
+  //   setShowYears(false);
+  // };
+
   return (
-    <div>
-      <div style={{ display: 'flex', gap: '1rem' }}>
+    <div style={{ display: 'grid', height: '100vh', placeItems: 'center'}}>
+      {/* <div style={{ display: 'flex', gap: '1rem' }}>
         <button
           onClick={() =>
             setCalendar(
@@ -83,10 +84,13 @@ function App() {
           {showYears && (
             <YearList>
               {calendar.getYearsList().map(year => (
-                <button onClick={() => {
-                  setCalendar(new Calendar(year, calendar.month.number));
-                  setShowYears(false)
-                }}>{year}</button>
+                <button
+                  onClick={() => {
+                    setCalendar(new Calendar(year, calendar.month.number));
+                    setShowYears(false);
+                  }}>
+                  {year}
+                </button>
               ))}
             </YearList>
           )}
@@ -97,12 +101,19 @@ function App() {
           <WeekDays>{day}</WeekDays>
         ))}
         {calendar.getMonthDaysGrid().map((item, idx) => (
-          <Day onClick={() => console.log(item.day.format('DD/MM/YYY'))} isCurrentMonth={item?.isCurrentMonth} key={idx}>
+          <Day
+            onClick={() => console.log(item.day.format('DD/MM/YYY'))}
+            isCurrentMonth={item?.isCurrentMonth}
+            key={idx}>
             {item?.day.date || 'x'}
           </Day>
         ))}
       </Grid>
-      <YearsDropdown years={calendar.getYearsList()} />
+      <YearsDropdown
+        years={calendar.getYearsList()}
+        currentYear={calendar.year}
+        changeYear={changeYear}
+      /> */}
       <Datepicker />
     </div>
   );

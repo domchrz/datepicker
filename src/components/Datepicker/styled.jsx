@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const Card = styled.div`
+  position: relative;
   display: flex;
   flex-direction: column;
   padding: 1rem;
@@ -39,7 +40,8 @@ export const ChevronButton = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0.5rem;
+  padding-block: 0.5rem;
+  padding-inline: .25rem;
   height: 100%;
   background-color: none;
   border: none;
@@ -107,7 +109,7 @@ export const DaysGrid = styled.div`
 export const WeekDay = styled.p`
   line-height: 1.25rem;
   padding: 0.5rem;
-  font-size: 0.75rem;
+  font-size: 0.75rem;;
 `;
 
 export const MonthDay = styled.p`
@@ -119,6 +121,9 @@ export const MonthDay = styled.p`
   height: 2.125rem;
   font-size: 0.875rem;
   ${({ isCurrentMonth }) => !isCurrentMonth && `color: #C0C0C0;`}
+  background-color: ${({isSelected}) => isSelected && '#185bb4'};
+  color: ${({isSelected}) => isSelected && 'white'};
+  border-radius: .5rem;
   cursor: pointer;
 `;
 
@@ -165,4 +170,10 @@ export const YearsRange = styled.p`
   padding: 0.5rem;
   font-weight: 400;
   line-height: 1.5rem;
+`;
+
+export const Backdrop = styled.div`
+  position: absolute;
+  inset: 0;
+  background-color: rgb(0, 0, 0, 0.5);
 `;

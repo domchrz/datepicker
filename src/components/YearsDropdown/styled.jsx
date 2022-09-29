@@ -61,3 +61,14 @@ export const ChevronButton = styled.button`
     color: #185bb4;
   }
 `;
+
+export const Year = styled.button`
+  padding: 0.5rem;
+  line-height: 1.5rem;
+  background-color: transparent;
+  border: none;
+  background-color: ${({isSelected}) => isSelected && '#185bb4'};
+  color: ${({isSelected}) => isSelected && 'white'};
+  border-radius: .5rem;
+  cursor: pointer;
+`;
