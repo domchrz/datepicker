@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.js": "/datepicker/static/js/main.fa70c88b.js",
+    "main.js": "/datepicker/static/js/main.c413517c.js",
     "index.html": "/datepicker/index.html",
     "static/media/dropdown-hide.svg": "/datepicker/static/media/dropdown-hide.f6c88b8dcd1442571abc084c89706fb7.svg",
     "static/media/dropdown-show.svg": "/datepicker/static/media/dropdown-show.570950c3cd905d7b948fc80e620aee6f.svg",
     "static/media/chevron-left.svg": "/datepicker/static/media/chevron-left.524ce70f1b734314f37eff2fe4fb3bde.svg",
     "static/media/chevron-right.svg": "/datepicker/static/media/chevron-right.423bc227947afd5630afc6afd640e510.svg",
-    "main.fa70c88b.js.map": "/datepicker/static/js/main.fa70c88b.js.map"
+    "main.c413517c.js.map": "/datepicker/static/js/main.c413517c.js.map"
   },
   "entrypoints": [
-    "static/js/main.fa70c88b.js"
+    "static/js/main.c413517c.js"
   ]
 }
