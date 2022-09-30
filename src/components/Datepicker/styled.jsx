@@ -86,11 +86,12 @@ export const YearContainer = styled.div`
 `;
 
 export const DropdownButton = styled.button`
-  position: relative;
   display: flex;
   align-items: center;
   border: none;
   background-color: transparent;
+  transform: ${({shouldRotate}) => shouldRotate && `rotateZ(180deg)`};
+  transition: transform .3s ease-out;
   & svg {
     height: 1.5rem;
     width: 1.5rem;

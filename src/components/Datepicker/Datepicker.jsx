@@ -57,8 +57,8 @@ export default function Datepicker() {
         </MonthContainer>
         <YearContainer>
           {calendar.year}
-          <DropdownButton onClick={() => setShowYears(prevState => !prevState)}>
-            {showYears ? <DropdownHide /> : <DropdownShow />}
+          <DropdownButton shouldRotate={showYears} onClick={() => setShowYears(prevState => !prevState)}>
+            <DropdownShow />
           </DropdownButton>
           {showYears && (
             <YearsDropdown
